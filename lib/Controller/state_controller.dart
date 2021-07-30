@@ -13,13 +13,15 @@ class StateController extends GetxController {
   int startIndex = 0;
   int endIndex = 5000;
   String? currentIndex = '0';
+  double vh = MediaQueryData.fromWindow(window).size.height/2;
+
   static Widget steps = Container();
 
   @override
   void onInit() {
     list.add(
       Container(
-        width: 200,
+        width: vh,
       ),
     );
     if (!MainScreen.isLimited) {
@@ -90,7 +92,7 @@ class StateController extends GetxController {
     }
     list.add(
       Container(
-        width: 200,
+        width: vh,
       ),
     );
     scrollController.addListener(controllerListener);
@@ -131,6 +133,11 @@ class StateController extends GetxController {
         changeState();
       }
       update();
+    }else if(startIndex == 0){
+      currentIndex = startIndex.toString();
+      changeValue = endIndex.toDouble();
+      scrollController.jumpTo(scrollController.position.minScrollExtent);
+      changeState();
     }
   }
 
@@ -185,7 +192,7 @@ class StateController extends GetxController {
           ),
         );
         scrollController.position
-            .jumpTo(scrollController.position.minScrollExtent + 200);
+            .jumpTo(scrollController.position.minScrollExtent + vh);
       } else if (scrollController.position.pixels ==
           scrollController.position.minScrollExtent) {
         if (startIndex != 0) {
@@ -201,11 +208,11 @@ class StateController extends GetxController {
             ),
           );
           scrollController.position
-              .jumpTo(scrollController.position.maxScrollExtent - 200);
+              .jumpTo(scrollController.position.maxScrollExtent - vh);
         } else {
           if (changeValue > endIndex.toDouble()) {
             scrollController.position
-                .jumpTo(scrollController.position.maxScrollExtent + 200);
+                .jumpTo(scrollController.position.maxScrollExtent + vh);
           }
         }
         changeValue = endIndex.toDouble();
