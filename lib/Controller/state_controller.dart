@@ -13,7 +13,7 @@ class StateController extends GetxController {
   int startIndex = 0;
   int endIndex = 5000;
   String? currentIndex = '0';
-  double vh = MediaQueryData.fromWindow(window).size.width/2;
+  double vh = (MediaQueryData.fromWindow(window).size.width/2)-20;
 
   static Widget steps = Container();
 
