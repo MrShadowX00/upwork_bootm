@@ -111,6 +111,7 @@ class StateController extends GetxController {
       scrollController.jumpTo(scrollController.position.maxScrollExtent);
       currentIndex = '6500';
     } else {
+      scrollController.jumpTo(scrollController.position.maxScrollExtent/2);
       startIndex = startIndex + 5000;
       endIndex = endIndex + 5000;
       currentIndex = startIndex.toString();

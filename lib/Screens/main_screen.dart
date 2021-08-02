@@ -5,7 +5,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:upwork_bottom/Controller/state_controller.dart';
 
 class MainScreen extends StatefulWidget {
-  static  bool isLimited = true;
+  static  bool isLimited = false;
   const MainScreen({Key? key}) : super(key: key);
 
   @override
@@ -120,6 +120,7 @@ class _MainScreenState extends State<MainScreen> {
                                                               child: Text(
                                                                 'Shares',
                                                                 style: TextStyle(
+                                                                  decoration: TextDecoration.none,
                                                                   color: Colors
                                                                       .black54,
                                                                   fontSize: 22,
@@ -134,6 +135,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                   '${controller
                                                                       .currentIndex}',
                                                                   style: TextStyle(
+                                                                    decoration: TextDecoration.none,
                                                                     color: Colors
                                                                         .black,
                                                                     fontSize: 40,
@@ -190,6 +192,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                             '${controller
                                                                                 .startIndex}',
                                                                             style: TextStyle(
+                                                                              decoration: TextDecoration.none,
                                                                               color: Colors
                                                                                   .white,
                                                                               fontWeight: FontWeight.normal,
@@ -207,6 +210,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                             '${controller
                                                                                 .endIndex}',
                                                                             style: TextStyle(
+                                                                              decoration: TextDecoration.none,
                                                                               color: Colors
                                                                                   .white,
                                                                               fontWeight: FontWeight.normal,
@@ -290,6 +294,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                   child: Text(
                                                                     'Save',
                                                                     style: TextStyle(
+                                                                      decoration: TextDecoration.none,
                                                                       color: Colors
                                                                           .purple[400],
                                                                       fontWeight: FontWeight.normal,
