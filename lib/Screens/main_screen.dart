@@ -132,7 +132,8 @@ class _MainScreenState extends State<MainScreen> {
                                                                   .all(8.0),
                                                               child: Container(
                                                                 child: Text(
-                                                                  '${controller
+                                                                  (MainScreen.isLimited)?'${(double.parse(controller
+                                                                      .currentIndex!)/1000).toStringAsFixed(3)}':'${controller
                                                                       .currentIndex}',
                                                                   style: TextStyle(
                                                                     decoration: TextDecoration.none,
@@ -189,7 +190,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                         },
                                                                         child: Container(
                                                                           child: Text(
-                                                                            '${controller
+                                                                            (MainScreen.isLimited)?'${(controller.startIndex/1000).toStringAsFixed(3)}':'${controller
                                                                                 .startIndex}',
                                                                             style: TextStyle(
                                                                               decoration: TextDecoration.none,
@@ -207,7 +208,7 @@ class _MainScreenState extends State<MainScreen> {
                                                                         },
                                                                         child: Container(
                                                                           child: Text(
-                                                                            '${controller
+                                                                            (MainScreen.isLimited)?'${(controller.endIndex/1000).toStringAsFixed(3)}':'${controller
                                                                                 .endIndex}',
                                                                             style: TextStyle(
                                                                               decoration: TextDecoration.none,
